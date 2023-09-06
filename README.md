@@ -79,3 +79,8 @@ Anotações relacionadas a estudos externos sobre SQL
 --AVG("DESCONTO (%)") AS MEDIA
 --FROM TabelaTeste
 --GROUP BY COD_PROD
+
+--SELECT Funcionarios.PrimeiroNome, Departamentos.Nome
+--FROM Funcionarios
+--JOIN Departamentos ON Departamentos.Codigo = Funcionarios.CodigoDepartamento
+WHERE Funcionarios.Salario > SOME(SELECT Salario FROM Funcionarios WHERE Codigo IN (SELECT CodigoFuncionarioGerente FROM Departamentos)--);
